@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>相談入力</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>相談の入力</h1>
+
+    <p class="description">
+      うまくまとまっていなくても大丈夫です。<br>
+      今の気持ちを、書ける範囲で教えてください。
+    </p>
+
+    <form action="thanks.html" method="get" class="consult-form">
+      <label>
+        ニックネーム（任意）
+        <input type="text" name="nickname" placeholder="匿名でも大丈夫です">
+      </label>
+
+      <label>
+        ご相談内容
+        <textarea name="message" rows="6" placeholder="ここに書いてください"></textarea>
+      </label>
+
+      <p class="note">
+        ※ すぐに返信できない場合があります。<br>
+        ※ 緊急性の高い内容には対応できません。
+      </p>
+
+      <button type="submit" class="btn">
+        送信する
+      </button>
+    </form>
+  </main>
+</body>
+</html>

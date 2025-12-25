@@ -28,3 +28,31 @@ body {
   border-radius: 6px;
   text-decoration: none;
 }
+
+.description {
+  margin-bottom: 24px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.consult-form label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.consult-form input,
+.consult-form textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.note {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 24px;
+}
