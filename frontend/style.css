@@ -1,0 +1,30 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  background: linear-gradient(#f6f7f5, #eef3ef);
+  color: #333;
+}
+
+.container {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+.notice {
+  background: #fff;
+  padding: 24px;
+  border-left: 5px solid #7dbb91;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.btn {
+  display: block;
+  margin-top: 32px;
+  padding: 16px;
+  background: #7dbb91;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+}
