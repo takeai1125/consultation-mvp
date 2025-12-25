@@ -1,3 +1,6 @@
+## 将来拡張用 ER図
+
+```mermaid
 erDiagram
     USER {
         int id PK
