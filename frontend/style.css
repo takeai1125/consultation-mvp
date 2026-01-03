@@ -62,3 +62,50 @@ body {
   color: #777;
   margin-top: 16px;
 }
+
+/* 管理画面用 */
+.admin-list {
+  margin-top: 24px;
+}
+
+.consult-card {
+  background: #fff;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.status {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+}
+
+.status.new {
+  background: #e3f3e9;
+  color: #2f7d4c;
+}
+
+.status.waiting {
+  background: #fdf2d0;
+  color: #8a6d1d;
+}
+
+.status.closed {
+  background: #eee;
+  color: #666;
+}
+
+.summary {
+  font-size: 14px;
+  line-height: 1.6;
+}
