@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMax slice" role="img" aria-labelledby="title-desc">
+  <title id="title-desc">草木の装飾</title>
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#9fd6b7"/>
+      <stop offset="1" stop-color="#6fae83"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#7dbb91"/>
+      <stop offset="1" stop-color="#4c8a62"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景や葉のグループ -->
+  <g transform="translate(0,20)">
+    <path d="M0,160 C180,40 420,40 600,140 C780,240 1020,180 1200,140 L1200,240 L0,240 Z" fill="url(#g1)" opacity="0.95"/>
+    <g transform="translate(40,10) scale(0.95)">
+      <path d="M140 90 C120 60 100 40 60 38 C58 70 88 98 140 120 C180 135 210 130 240 112 C220 96 190 92 140 90 Z" fill="#6aa682"/>
+      <path d="M320 110 C300 78 270 60 230 58 C228 88 258 112 320 140 C360 156 395 150 430 132 C410 116 380 110 320 110 Z" fill="#5ea573"/>
+      <path d="M540 70 C510 46 470 28 420 26 C418 54 450 80 540 110 C600 132 640 126 690 108 C670 92 640 86 540 70 Z" fill="#4a8e66"/>
+    </g>
+  </g>
+
+</svg>

@@ -6,8 +6,31 @@ body {
 
 .container {
   max-width: 640px;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 24px;
+}
+
+/* ヘッダーの草木装飾 */
+.site-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(125,187,145,0.12), transparent);
+  height: 140px;
+  display:flex;
+  align-items:flex-end;
+}
+
+.site-hero .hero-leaves {
+  width: 120%;
+  max-height: 140px;
+  display: block;
+  transform: translateX(-10%);
+}
+
+@media (max-width: 480px) {
+  .site-hero { height: 120px; }
+  .site-hero .hero-leaves { transform: translateX(-15%); }
 }
 
 .notice {
