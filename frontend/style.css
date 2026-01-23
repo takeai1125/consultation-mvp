@@ -192,4 +192,49 @@ body {
 .summary {
   font-size: 14px;
   line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* ← 2行まで */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* 詳細ページ */
+.detail-meta {
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.detail-content {
+  margin: 24px 0;
+}
+
+.admin-memo textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 8px;
+}
+
+.status-control {
+  margin-top: 24px;
+}
+
+.status-control select {
+  padding: 6px;
+  margin-right: 8px;
+}
+
+.detail-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #7dbb91;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.detail-link:hover {
+  background: #6ba87f;
 }
