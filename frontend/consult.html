@@ -18,26 +18,85 @@
       今の気持ちを、書ける範囲で教えてください。
     </p>
 
-    <form action="thanks.html" method="get" class="consult-form">
-      <label>
-        ニックネーム（任意）
-        <input type="text" name="nickname" placeholder="匿名でも大丈夫です">
-      </label>
+    <form
+     action="https://formspree.io/f/xojrnrvq"
+     method="POST"
+     class="consult-form"
+   >
 
-      <label>
-        ご相談内容
-        <textarea name="message" rows="6" placeholder="ここに書いてください"></textarea>
-      </label>
+     <label>
+       ニックネーム（任意）
+       <input
+         type="text"
+         name="nickname"
+         placeholder="匿名でも大丈夫です"
+       >
+     </label>
 
-      <p class="note">
-        ※ すぐに返信できない場合があります。<br>
-        ※ 緊急性の高い内容には対応できません。
-      </p>
+     <label>
+       ご相談内容
+       <textarea
+         name="message"
+         rows="6"
+         placeholder="ここに書いてください"
+         required
+       ></textarea>
+     </label>
 
-      <button type="submit" class="btn">
-        送信する
-      </button>
-    </form>
+     <label class="checkbox-label">
+       <input
+         type="checkbox"
+         name="reply_request"
+         value="yes"
+       >
+       返信を希望する
+     </label>
+
+     <label>
+　　　  返信方法
+       <select name="contact_type">
+         <option value="">選択してください</option>
+         <option value="email">メール</option>
+         <option value="instagram">Instagram</option>
+         <option value="line">LINE</option>
+       </select>
+     </label>
+
+     <label>
+       返信希望時の連絡先（任意）
+       <input
+         type="text"
+         name="contact"
+         placeholder="メールアドレス、Instagram ID、LINE名など"
+       >
+     </label>
+
+     <p class="note">
+       ※ 返信を希望される場合は、連絡先をご記入ください。<br>
+       ※ 返信まで数日かかる場合があります。<br>
+       ※ 緊急性の高い内容には対応できません。<br>
+       ※ 医療行為・診断・助言は行っていません。
+     </p>
+
+     <button type="submit" class="btn">
+       送信する
+     </button>
+   </form>
+   <section class="after-submit-guide">
+     <p>
+       送信後は、Formspreeの完了画面が表示されます。<br>
+       「サイトに戻る」を押すと、この相談入力ページに戻ります。
+     </p>
+
+     <p class="small">
+       ご相談内容は送信されています。<br>
+       返信まで数日お時間をいただく場合があります。
+     </p>
+
+     <a href="index.html" class="btn secondary-btn">
+       トップページに戻る
+     </a>
+   </section>
   </main>
 </body>
 </html>

@@ -238,3 +238,31 @@ body {
 .detail-link:hover {
   background: #6ba87f;
 }
+.next-guide {
+  margin-top: 2rem;
+}
+
+.next-guide ol {
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+.closing-message {
+  margin-top: 2rem;
+}
+
+.after-submit-guide {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #dfe8df;
+}
+
+.after-submit-guide p {
+  line-height: 1.8;
+}
+
+.secondary-btn {
+  background-color: #ffffff;
+  color: #4f8f68;
+  border: 1px solid #7dbb91;
+}
