@@ -15,15 +15,20 @@ HEIGHT = 1920
 FPS = 24
 SECONDS_PER_SLIDE = 5
 
-# 背景画像を使う場合は videos/assets/forest.jpg に置く
+# 背景画像
 BACKGROUND_IMAGE = ASSETS_DIR / "forest.jpg"
 
 slides = [
     "なんとなく\n疲れてしまう日って\nありますよね",
+
     "ちゃんとしなきゃ\nと思うほど、\n苦しくなる時もあります",
+
     "「ひと休み相談室」は\n少し気持ちを整理したい時に\n使える場所です",
+
     "うまく言葉に\nできなくても\n大丈夫です",
-    "ひと休み相談室\nLINEからご相談できます",
+
+    "まずは、\n今の気持ちを\n書けるところから",
+
 ]
 
 # =====================
@@ -35,6 +40,7 @@ FONT_PATHS = [
 ]
 
 font_path = None
+
 for path in FONT_PATHS:
     if Path(path).exists():
         font_path = path
@@ -42,28 +48,45 @@ for path in FONT_PATHS:
 
 if font_path is None:
     raise FileNotFoundError(
-        "日本語フォントが見つかりません。先に fonts-noto-cjk をインストールしてください。"
+        "日本語フォントが見つかりません"
     )
 
-font = ImageFont.truetype(font_path, 70)
+font = ImageFont.truetype(font_path, 72)
 small_font = ImageFont.truetype(font_path, 42)
 
 # =====================
-# 背景作成
+# 背景生成
 # =====================
 def create_background():
+
     if BACKGROUND_IMAGE.exists():
+
         bg = Image.open(BACKGROUND_IMAGE).convert("RGB")
         bg = bg.resize((WIDTH, HEIGHT))
         bg = bg.filter(ImageFilter.GaussianBlur(1.5))
+
         return bg
 
-    # 画像がない場合のやさしい背景
+    # 背景画像がない場合
     bg = Image.new("RGB", (WIDTH, HEIGHT), (225, 242, 235))
+
     draw = ImageDraw.Draw(bg)
-    draw.ellipse((-180, -120, 420, 480), fill=(190, 225, 210))
-    draw.ellipse((760, 1350, 1260, 1900), fill=(185, 220, 215))
-    draw.ellipse((120, 1450, 420, 1750), fill=(205, 232, 220))
+
+    draw.ellipse(
+        (-180, -120, 420, 480),
+        fill=(190, 225, 210)
+    )
+
+    draw.ellipse(
+        (760, 1350, 1260, 1900),
+        fill=(185, 220, 215)
+    )
+
+    draw.ellipse(
+        (120, 1450, 420, 1750),
+        fill=(205, 232, 220)
+    )
+
     return bg
 
 # =====================
@@ -72,10 +95,16 @@ def create_background():
 frames = []
 
 for index, text in enumerate(slides):
+
     bg = create_background().convert("RGBA")
 
-    # 背景を少し淡くする
-    soft_layer = Image.new("RGBA", (WIDTH, HEIGHT), (230, 245, 240, 95))
+    # 背景を少し淡く
+    soft_layer = Image.new(
+        "RGBA",
+        (WIDTH, HEIGHT),
+        (230, 245, 240, 95)
+    )
+
     bg = Image.alpha_composite(bg, soft_layer)
 
     draw = ImageDraw.Draw(bg)
@@ -84,7 +113,7 @@ for index, text in enumerate(slides):
         (0, 0),
         text,
         font=font,
-        spacing=28,
+        spacing=30,
         align="center",
     )
 
@@ -95,34 +124,40 @@ for index, text in enumerate(slides):
     y = (HEIGHT - text_h) // 2
 
     # 半透明カード
-    padding_x = 80
-    padding_y = 65
+    padding_x = 90
+    padding_y = 70
 
     card_x1 = max(60, x - padding_x)
     card_y1 = y - padding_y
     card_x2 = min(WIDTH - 60, x + text_w + padding_x)
     card_y2 = y + text_h + padding_y
 
-    card = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    card = Image.new(
+        "RGBA",
+        (WIDTH, HEIGHT),
+        (0, 0, 0, 0)
+    )
+
     card_draw = ImageDraw.Draw(card)
 
     card_draw.rounded_rectangle(
         (card_x1, card_y1, card_x2, card_y2),
-        radius=56,
+        radius=60,
         fill=(255, 255, 255, 185),
     )
 
     bg = Image.alpha_composite(bg, card)
+
     draw = ImageDraw.Draw(bg)
 
-    # 薄い影
+    # 影
     draw.multiline_text(
         (x + 2, y + 2),
         text,
         font=font,
         fill=(120, 150, 145, 120),
         align="center",
-        spacing=28,
+        spacing=30,
     )
 
     # 本文
@@ -132,18 +167,24 @@ for index, text in enumerate(slides):
         font=font,
         fill=(38, 92, 82),
         align="center",
-        spacing=28,
+        spacing=30,
     )
 
     # 最後だけ補足
     if index == len(slides) - 1:
-        sub_text = "プロフィールURL または LINE からどうぞ"
 
-        sub_bbox = draw.textbbox((0, 0), sub_text, font=small_font)
+        sub_text = "プロフィールURLからどうぞ"
+
+        sub_bbox = draw.textbbox(
+            (0, 0),
+            sub_text,
+            font=small_font
+        )
+
         sub_w = sub_bbox[2] - sub_bbox[0]
 
         draw.text(
-            ((WIDTH - sub_w) // 2, card_y2 + 55),
+            ((WIDTH - sub_w) // 2, card_y2 + 60),
             sub_text,
             font=small_font,
             fill=(55, 115, 105),
